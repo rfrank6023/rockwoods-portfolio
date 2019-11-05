@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Big John PRO Bold';
+    font-family: 'Big John PRO';
     src: url('bigjohnpro-bold-webfont.woff2') format('woff2'),
          url('bigjohnpro-bold-webfont.woff') format('woff');
     font-weight: bold;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: 'Big John PRO Light';
+    font-family: 'Big John PRO';
     src: url('bigjohnpro-light-webfont.woff2') format('woff2'),
          url('bigjohnpro-light-webfont.woff') format('woff');
     font-weight: lighter;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    font-family: 'Big John PRO Regular';
+    font-family: 'Big John PRO';
     src: url('bigjohnpro-regular-webfont.woff2') format('woff2'),
          url('bigjohnpro-regular-webfont.woff') format('woff');
     font-weight: normal;

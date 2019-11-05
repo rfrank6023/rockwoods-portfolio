@@ -21,30 +21,33 @@ body {
             background-position: right;
             background-size: 100%;
             min-height: 70vh;
+            padding-bottom: 20px;
             #hero-text {
                 position: relative;
                 left: 50vw;
                 background-color: white;
                 color: $black;
-                width: 40vw;
+                width: 35vw;
                 padding: 40px;
                 top: 100px;
                 padding-left: 60px;
+                padding-top: 0px;
                 h2 {
                     transform: rotate(-90deg);
                     position: relative;
-                    right: 300px;
+                    right: 280px;
                     font-weight: normal;
                     font-size: 30px;
-                    bottom: 50px;
+                    bottom: 30px;
                 }
                 h1 {
-                    font-size: 60px;
+                    font-size: 45px;
                     color: $green;
                 }
                 #hero-cta {
+                    padding: 10px;
                     a {
-                        padding: 5px;
+                        padding: 10px;
                         color: white;
                         background-color: $green;
                         text-decoration: none;
@@ -54,6 +57,80 @@ body {
                     }
                 }
             }
+        }
+        #intro {
+            display: flex;
+	    padding: 5vw;
+            div {
+                color: $black;
+                margin: 20px;
+            }
+            #convince {
+                background-color: white;
+		margin-right: 10vw;
+                .big-red {
+                    color: $red;
+		    font-size: xx-large;
+                }
+                p {
+                    font-size: 20px;
+		    padding: 10px;
+                }
+                #headline {
+                    transform: rotate(-90deg);
+                    position: relative;
+                    right: 270px;
+                    font-weight: normal;
+                    font-size: 23px;
+                    top: 100px;
+                }
+                #other {
+                    padding-left: 40px;
+                }
+		#everything-else {
+			padding-left: 20px;
+			.headlines-secondary {
+				display:flex;
+				align-items: center;
+				.big-red {
+					padding-left: 5px;
+				}
+			}
+			strong {
+				color: $red;
+			}
+			h1 .big-red {
+				padding-left: 5px;
+			}
+		}
+		
+            }
+		#true-intro {
+			background-color:white;
+			margin: 0px !important;
+			padding: 20px;
+			max-width: 60vw;
+			h2 {
+				color: $yellow;
+				font-size: xx-large;
+			}
+			p {
+				font-size: x-large;
+			}
+			strong {
+				color: $yellow;
+			}
+		}
+		#pers-pic {
+			img {
+				width: 20vw;
+				height: 20vw;
+			}
+			p {
+				color: white;
+				font-size: large;
+			}
+		}
         }
     }
 }
