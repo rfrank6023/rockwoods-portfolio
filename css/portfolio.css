@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  z-index: 50;
+  min-height: 10vh;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  color: #0c3263;
+  position: sticky;
+  top: 0;
+}
+header #logo {
+  display: flex;
+  align-items: center;
+  font-family: "Share Tech Mono", monospace;
+}
+header #logo #main-logo {
+  height: 8vh;
+}
+header nav {
+  padding-right: 20vw;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  min-width: 40vw;
+}
+header nav a {
+  text-decoration: none;
+  color: #0c3263;
+}
+
+footer {
+  background-color: white;
+  color: #122e28;
+}
+footer a {
+  text-decoration: none;
+  color: #305789;
+}
+footer a:hover {
+  color: #122e28;
+}
+footer #footer-main {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+}
+footer #info h2, footer #info h3 {
+  font-family: Share Tech Mono, monospace;
+}
+footer #info p {
+  font-size: large;
+}
+footer #buttons {
+  max-width: 30rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Big John PRO, sans-serif;
+  background-color: #305789;
+  color: white;
+}
+body main {
+  min-height: 100vh;
+  padding: 3rem;
+}
+body main #intro {
+  padding-bottom: 3rem;
+}
+body main #test-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: black;
+}
+body main #test-container a {
+  text-decoration: none;
+  color: #305789;
+}
+body main #test-container a:hover {
+  color: #122e28;
+}
+body main #test-container .test-tile {
+  background-color: white;
+  margin: 15px;
+  min-width: 25rem;
+}
+body main #test-container .test-tile img {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=portfolio.css.map */

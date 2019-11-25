@@ -4,6 +4,7 @@
 }
 
 header {
+  z-index: 50;
   min-height: 10vh;
   background-color: white;
   display: flex;
@@ -32,6 +33,32 @@ header nav a {
   color: #0c3263;
 }
 
+footer {
+  background-color: white;
+  color: #122e28;
+}
+footer a {
+  text-decoration: none;
+  color: #305789;
+}
+footer a:hover {
+  color: #122e28;
+}
+footer #footer-main {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+}
+footer #info h2, footer #info h3 {
+  font-family: Share Tech Mono, monospace;
+}
+footer #info p {
+  font-size: large;
+}
+footer #buttons {
+  max-width: 30rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -54,7 +81,7 @@ body main #hero #hero-text {
   position: relative;
   left: 50vw;
   background-color: white;
-  color: #121e28;
+  color: #122e28;
   width: 35vw;
   padding: 40px;
   top: 100px;
@@ -81,16 +108,25 @@ body main #hero #hero-text #hero-cta a {
   color: white;
   background-color: #19884a;
   text-decoration: none;
+  border: 1px solid #19884a;
 }
 body main #hero #hero-text #hero-cta #cta-2 {
   background-color: #0c3263;
+  border: 1px solid #0c3263;
+}
+body main #hero #hero-text #hero-cta a:hover {
+  background: none !important;
+  color: #19884a;
+}
+body main #hero #hero-text #hero-cta #cta-2:hover {
+  color: #0c3263;
 }
 body main #intro {
   display: flex;
   padding: 5vw;
 }
 body main #intro div {
-  color: #121e28;
+  color: #122e28;
   margin: 20px;
 }
 body main #intro #convince {
@@ -112,6 +148,7 @@ body main #intro #convince #headline {
   font-weight: normal;
   font-size: 23px;
   top: 100px;
+  z-index: 3;
 }
 body main #intro #convince #other {
   padding-left: 40px;
@@ -155,6 +192,181 @@ body main #intro #pers-pic img {
 body main #intro #pers-pic p {
   color: white;
   font-size: large;
+}
+body main #services-home {
+  padding: 50px;
+}
+body main #services-home h1 {
+  font-size: xx-large;
+}
+body main #services-home #tiles-sec {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body main #services-home #tiles-sec div {
+  background-color: white !important;
+  background-size: 80% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  color: black;
+  width: 300px;
+  margin: 30px;
+  padding: 30px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+body main #services-home #tiles-sec img {
+  position: relative;
+  left: 40px;
+  bottom: 120px;
+  width: 200px;
+}
+body main #services-home #tiles-sec p {
+  font-size: large;
+  padding-top: 20px;
+}
+body main #services-home #tiles-sec #pricing-tile {
+  background: url(../images/price-tag.svg);
+  color: #122e28;
+}
+body main #services-home #tiles-sec #pricing-tile img {
+  bottom: 50px;
+}
+body main #services-home #tiles-sec #pricing-tile a {
+  background-color: #122e28;
+  border: 1px solid #122e28;
+}
+body main #services-home #tiles-sec #pricing-tile a:hover {
+  background: none;
+  color: #122e28;
+}
+body main #services-home #tiles-sec #design-tile {
+  background: url(../images/sketch.svg);
+  color: #19884a;
+}
+body main #services-home #tiles-sec #design-tile a {
+  background-color: #19884a;
+  border: 1px solid #19884a;
+}
+body main #services-home #tiles-sec #design-tile a:hover {
+  background: none;
+  color: #19884a;
+}
+body main #services-home #tiles-sec #dev-tile {
+  background: url(../images/web.svg);
+  color: #0c3263;
+}
+body main #services-home #tiles-sec #dev-tile a {
+  background-color: #0c3263;
+  border: 1px solid #0c3263;
+}
+body main #services-home #tiles-sec #dev-tile a:hover {
+  background: none;
+  color: #0c3263;
+}
+body main #services-home #tiles-sec #seo-tile {
+  background: url(../images/analysis.svg);
+  color: #af414a;
+}
+body main #services-home #tiles-sec #seo-tile a {
+  background-color: #af414a;
+  border: 1px solid #af414a;
+}
+body main #services-home #tiles-sec #seo-tile a:hover {
+  background: none;
+  color: #af414a;
+}
+body main #services-home #tiles-sec #dev-ops {
+  background: url(../images/server.svg);
+  color: #db9d47;
+}
+body main #services-home #tiles-sec #dev-ops a {
+  background-color: #db9d47;
+  border: 1px solid #db9d47;
+}
+body main #services-home #tiles-sec #dev-ops a:hover {
+  background: none;
+  color: #db9d47;
+}
+body main #services-home #tiles-sec #online-tile {
+  background: url(../images/shop.svg);
+  color: #19884a;
+}
+body main #services-home #tiles-sec #online-tile a {
+  background-color: #19884a;
+  border: 1px solid #19884a;
+}
+body main #services-home #tiles-sec #online-tile a:hover {
+  background: none;
+  color: #19884a;
+}
+body main #services-home #tiles-sec .tiles-button {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+}
+body main #testimonials #test-container {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+body main #testimonials #test-container a {
+  text-decoration: none;
+  color: #305789;
+}
+body main #testimonials #test-container a:hover {
+  color: #122e28;
+}
+body main #testimonials #test-container .test-tile {
+  background-color: white;
+  margin: 15px;
+  min-width: 25rem;
+}
+body main #testimonials #test-container .test-tile img {
+  width: 100%;
+  height: auto;
+}
+body main #contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body main #contact div {
+  padding: 5rem;
+}
+body main #contact #con-info p {
+  font-size: larger;
+  max-width: 20rem;
+}
+body main #contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  min-width: 30rem;
+}
+body main #contact input {
+  height: 3rem;
+  padding-left: 1rem;
+  border: none;
+}
+body main #contact #submit-button {
+  margin-top: 20px;
+  align-self: start;
+  padding: 1rem 2rem;
+  font-family: Big John PRO;
+  font-size: large;
+  border: 1px solid white;
+  height: auto;
+}
+body main #contact #submit-button:hover {
+  background: none;
+  color: white;
 }
 
 /*# sourceMappingURL=index.css.map */

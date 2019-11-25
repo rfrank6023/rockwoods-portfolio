@@ -1,10 +1,11 @@
-$black: #121e28;
+$black: #122e28;
 $blue: #0c3263;
 $green: #19884a;
 $red: #af414a;
 $yellow: #db9d47;
 
 @use 'header';
+@use 'footer';
 
 * {
     margin: 0;
@@ -51,10 +52,21 @@ body {
                         color: white;
                         background-color: $green;
                         text-decoration: none;
+			border: 1px solid $green;
                     }
                     #cta-2 {
                         background-color: $blue;
+			border: 1px solid $blue;
                     }
+		    a:hover
+		    {
+			    background: none !important;
+			    color: $green;
+		    }
+		    #cta-2:hover
+		    {
+			    color: $blue;
+		    }
                 }
             }
         }
@@ -83,6 +95,7 @@ body {
                     font-weight: normal;
                     font-size: 23px;
                     top: 100px;
+		    z-index: 3;
                 }
                 #other {
                     padding-left: 40px;
@@ -132,5 +145,218 @@ body {
 			}
 		}
         }
+	#services-home
+	{
+		padding: 50px;
+		h1
+		{
+			font-size: xx-large;
+		}
+		#tiles-sec
+		{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			div
+			{
+				background-color: white !important;
+				background-size: 80% !important;
+				background-position: center center !important;
+				background-repeat: no-repeat !important;
+				color: black;
+				width: 300px;
+				margin: 30px;
+				padding: 30px;
+	   			height: 300px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+			}
+			img
+			{
+				position: relative;
+				left: 40px;
+				bottom: 120px;
+				width: 200px;
+			}
+			p 
+			{
+				font-size: large;
+				padding-top: 20px;
+			}
+			
+			#pricing-tile 
+			{			
+				  background: url(../images/price-tag.svg) ; 
+				color: $black; 
+			img {
+				bottom: 50px;
+			}
+				a{
+			       		background-color: $black; 
+					border: 1px solid $black;
+				}
+				a:hover
+				{
+					background: none;
+					color: $black;
+				}
+			}	
+			#design-tile
+			{
+				  background: url(../images/sketch.svg) ; 
+				color: $green;
+				a{
+			      	 	background-color: $green; 
+					border: 1px solid $green;
+				}
+				a:hover
+				{
+					background: none;
+					color: $green;
+				}
+			}
+			#dev-tile
+			{
+				  background: url(../images/web.svg) ; 
+				color: $blue;
+				a{
+			       		background-color: $blue; 
+					border: 1px solid $blue;
+				}	
+				a:hover
+				{
+					background: none;
+					color: $blue;
+				}
+			}
+			#seo-tile
+			{
+				  background: url(../images/analysis.svg); 
+				color: $red;
+				a{
+			       		background-color: $red; 
+					border: 1px solid $red;
+				}
+				a:hover
+				{
+					background: none;
+					color: $red;
+				}
+			}
+			#dev-ops
+			{
+				  background: url(../images/server.svg); 
+				color: $yellow;
+				a{
+			       		background-color: $yellow; 
+					border: 1px solid $yellow;
+				}
+				a:hover
+				{
+					background: none;
+					color: $yellow;
+				}
+			}
+			#online-tile
+			{
+				  background: url(../images/shop.svg); 
+				
+				color: $green;
+				a{
+			       		background-color: $green; 
+					border: 1px solid $green;
+				}
+				a:hover
+				{
+					background: none;
+					color: $green;
+				}
+			}
+			.tiles-button
+			{
+				padding-left: 30px;
+				padding-right: 30px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				color: white;
+			}
+		}
+	}
+	#testimonials
+	{
+		#test-container
+		{
+			display: flex;
+			justify-content: space-between;
+			color: black;
+			a
+			{
+				text-decoration: none;
+				color: #305789;
+			}
+			a:hover
+			{
+				color: $black;
+			}
+			.test-tile
+			{
+				background-color: white;
+				margin: 15px;
+				min-width: 25rem;
+				img
+				{
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+	#contact
+	{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		div
+		{
+			padding: 5rem;
+		}
+		#con-info
+		{ 
+			p
+			{
+				font-size: larger;
+				max-width: 20rem;
+			}
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+          		justify-content: stretch;
+			min-width: 30rem;
+		}
+		input
+		{
+			height: 3rem;
+			padding-left: 1rem;
+			border: none;
+		}
+		#submit-button
+		{
+			margin-top: 20px;
+			align-self: start;
+			padding: 1rem 2rem;
+			font-family: Big John PRO;
+			font-size: large;
+			border: 1px solid white;
+			height: auto;
+		}
+		#submit-button:hover
+		{
+			background: none;
+			color: white;
+		}
+	}
     }
 }

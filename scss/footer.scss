@@ -1,0 +1,35 @@
+footer
+{
+	background-color: white;
+	color: #122e28;
+	a 
+	{
+		text-decoration: none;
+		color: #305789;
+	}
+	a:hover
+	{
+		color: #122e28;
+	}
+	#footer-main
+	{
+		display: flex;
+		justify-content: space-around;
+		padding: 50px;
+	}
+	#info
+	{
+		h2, h3
+		{
+			font-family: Share Tech Mono, monospace;
+		}
+		p
+		{
+			font-size: large;
+		}
+	}
+	#buttons
+	{
+		max-width: 30rem;
+	}
+}

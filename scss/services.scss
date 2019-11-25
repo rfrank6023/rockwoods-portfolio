@@ -1,0 +1,58 @@
+$black: #122e28;
+$blue: #0c3263;
+$green: #19884a;
+$red: #af414a;
+$yellow: #db9d47;
+
+@use 'header';
+@use 'footer';
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: Big John PRO, sans-serif;
+	background-color: #305789;
+	color: white;
+	main  
+	{
+		min-height: 100vh; 
+		padding: 3rem;
+		#title { font-size: 50px; }
+		div
+		{
+			background: white;
+			padding: 3rem;
+			margin: 5rem 0rem;
+		}
+		p
+		{
+			font-size: large;
+			margin: 2rem 0;
+			color: $black !important;
+		}
+		h2
+		{
+			padding: 3rem 0 0 0;
+		}
+		#design-tile
+		{
+			color: $green;
+		}
+		#dev-tile
+		{
+			color: $red;	
+		}
+		#biz-tile
+		{
+			color: $yellow;
+		}
+		#pricing-tile
+		{
+			color: $blue;
+		}
+	}
+}
+

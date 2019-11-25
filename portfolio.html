@@ -7,65 +7,61 @@
     <link rel="icon" href="?">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link href="stylesheets/Big John PRO/stylesheet.css" rel="stylesheet">
+    <link href="css/portfolio.css" rel="stylesheet">
     <title>My Portfolio - Rockwood Frank Web Designer</title>
 </head>
 <body>
-    <header>
-        <div id="logo">
-            <svg
-            id="main-logo"
-            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;"
-            xmlns:vectornator="http://vectornator.io"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns="http://www.w3.org/2000/svg"
-            xml:space="preserve"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            >
-            <g id="Layer 1" vectornator:layerName="Layer 1">
-                <path
-                d="M-0.406163-1.97126L1034.57-1.97126L1034.57+1047.56L-0.406163+1047.56L-0.406163-1.97126Z"
-                opacity="1"
-                fill="#0e0041"
-                />
-                <path
-                stroke="#ffffff"
-                stroke-width="45.17"
-                d="M345.894+803.103L345.181+119.975L794.942+763.584"
-                fill="none"
-                stroke-linecap="butt"
-                opacity="1"
-                stroke-linejoin="bevel"
-                />
-                <path
-                stroke="#ffffff"
-                stroke-width="45.17"
-                d="M569.55+742.858L683.541+911.254"
-                fill="none"
-                stroke-linecap="butt"
-                opacity="1"
-                stroke-linejoin="miter"
-                />
-            </g>
-            </svg>
-            <p id="logo-text">
-            <span id="first">Rockwood Frank</span
-            ><span id="last">Web Designer</span>
-            </p>
-        </div>
-        <nav>
-            <a href="?">Home</a>
-            <a href="?">Contact</a>
-            <a href="?">Portfolio</a>
-            <a href="?">About Me</a>
-            <a href="?">Services</a>
-        </nav>
-    </header>
+        <header>
+            <div id="logo">
+              <svg
+                id="main-logo"
+                style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;"
+                xmlns:vectornator="http://vectornator.io"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+              >
+                <g id="Layer 1" vectornator:layerName="Layer 1">
+                  <path
+                    stroke="#0c3263"
+                    stroke-width="45.17"
+                    d="M345.894+803.103L345.181+119.975L794.942+763.584"
+                    fill="none"
+                    stroke-linecap="butt"
+                    opacity="1"
+                    stroke-linejoin="bevel"
+                  />
+                  <path
+                    stroke="#0c3263"
+                    stroke-width="45.17"
+                    d="M569.55+742.858L683.541+911.254"
+                    fill="none"
+                    stroke-linecap="butt"
+                    opacity="1"
+                    stroke-linejoin="miter"
+                  />
+                </g>
+              </svg>
+              <p id="logo-text">
+                <span id="first">Rockwood Frank</span><br /><span id="last">Web Designer</span>
+              </p>
+            </div>
+            <nav>
+              <a href= "./index.html">Home</a>
+              <a href="./contact.html">Contact</a>
+              <a href="./portfolio.html">Portfolio</a>
+              <a href="./about.html">About Me</a>
+              <a href="./services.html">Services</a>
+            </nav>
+        </header>
     <main>
         <div id="intro">
             <h1>My Work</h1>
             <p>Here are some websites I have done before. Please look around at my work and my happy clients.</p>
         </div>
+	<div id = "test-container">
         <div class="test-tile">
             <img src="?" alt = "An screenshot of one of the sites I designed.">
             <p class="quote">Lorem ipsum dolor sit amet.</p>
@@ -102,32 +98,32 @@
                 <p class="client">Client Name, Time</p>
                 <a href="?" class="learnbut">Learn More</a>
         </div>
+	</div>
     </main>
     <footer>
+	    <div id = "footer-main">
         <div id="info">
             <h2>Rockwood Frank</h2>
             <h3>Web Designer</h3>
             <hr />
-            <p>rockwood@rfrankweb.com</p>
-            <p>(406) 905 1456</p>
-            <p>PO Box 85</p>
-            <p>Joliet, MT 59041</p>
+	    <a href = "mailto:rockwood@rfrankweb.com">rockwood@rfrankweb.com</a><br />
+            <p href = "tel:406-905-1456">(406) 905 1456</p>
         </div>
-        <div id="mission">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestias quia ipsa laboriosam reiciendis. Qui asperiores incidunt libero voluptatibus quod ea magnam, doloribus atque aspernatur ab, molestias illo rem eligendi. Doloribus, beatae? Maiores libero corporis recusandae? Explicabo 
-            dolores qui consectetur ullam esse autem aut, obcaecati possimus animi, aperiam incidunt reprehenderit.
+        <div id="sitemap">
+		<a href="./index.html">Home</a></br>
+		<a href="./contact.html">Contact</a></br>
+		<a href="./portfolio.html">Portfolio</a></br>
+		<a href="./about.html">About Me</a></br>
+		<a href="./services.html">Services</a></br>
+	</div>
+	<div id="buttons">
+		<a href="https://www.linkedin.com/in/rockwood-frank-194054193/"><img src = "./images/linkedin.svg" alt = "Linkedin Logo"></a></br>
+		<a href="https://www.github.com/rfrankweb"><img src = "./images/github.svg" alt = "Github Logo"></a></br>
+		<a href="https://www.behance.net/rfrankweb"><img src = "./images/behance.svg" alt = "Behance Logo"></a></br>
+		<a href="https://www.twitter.com/RockwoodFrank"><img src = "./images/twitter.svg" alt = "Twitter Logo"></a></br>
         </div>
-        <div id="buttons">
-            <a href="?">Home</a>
-            <a href="?">Contact</a>
-            <a href="?">Portfolio</a>
-            <a href="?">About Me</a>
-            <a href="?">Services</a>
-            <a href="?">LinkedIn</a>
-            <a href="?">Github</a>
-            <a href="?">Behance</a>
-            <a href="?">Twitter</a>
-        </div>
+	</div>
+	<p>©2019 Rockwood Frank, Web Designer. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
