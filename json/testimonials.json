@@ -1,0 +1,19 @@
+{
+	"testimonials": [
+		{
+			"name": "The Law Office of Julie A. Brown & Associates",
+			"quote": "Amazing Job. This is your designer.",
+			"img-src": "../images/Screenshot-1.png"
+		},
+		{
+			"name": "Fast and Healthy Nutrition",
+			"quote": "Amazing Job, once again.",
+			"img-src": "../images/Screenshot-2.png"
+		},
+		{
+			"name": "Company C",
+			"quote": "Great job!",
+			"img-src": "../images/ex-site.jpg"
+		}
+	]
+}
