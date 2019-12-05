@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="?">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link href="stylesheets/Big John PRO/stylesheet.css" rel="stylesheet">
+    <link href="css/Big John PRO/stylesheet.css" rel="stylesheet">
     <link href="css/portfolio.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>My Portfolio - Rockwood Frank Web Designer</title>
 </head>
 <body>
@@ -57,47 +58,11 @@
             </nav>
         </header>
     <main>
-        <div id="intro">
+        <div id="intro" data-aos = "fade">
             <h1>My Work</h1>
             <p>Here are some websites I have done before. Please look around at my work and my happy clients.</p>
         </div>
 	<div id = "test-container">
-        <div class="test-tile">
-            <img src="?" alt = "An screenshot of one of the sites I designed.">
-            <p class="quote">Lorem ipsum dolor sit amet.</p>
-            <p class="client">Client Name, Time</p>
-            <a href="?" class="learnbut">Learn More</a>
-        </div>
-        <div class="test-tile">
-                <img src="?" alt = "An screenshot of one of the sites I designed.">
-                <p class="quote">Lorem ipsum dolor sit amet.</p>
-                <p class="client">Client Name, Time</p>
-                <a href="?" class="learnbut">Learn More</a>
-        </div>
-        <div class="test-tile">
-                <img src="?" alt = "An screenshot of one of the sites I designed.">
-                <p class="quote">Lorem ipsum dolor sit amet.</p>
-                <p class="client">Client Name, Time</p>
-                <a href="?" class="learnbut">Learn More</a>
-        </div>
-        <div class="test-tile">
-                <img src="?" alt = "An screenshot of one of the sites I designed.">
-                <p class="quote">Lorem ipsum dolor sit amet.</p>
-                <p class="client">Client Name, Time</p>
-                <a href="?" class="learnbut">Learn More</a>
-        </div>
-        <div class="test-tile">
-                <img src="?" alt = "An screenshot of one of the sites I designed.">
-                <p class="quote">Lorem ipsum dolor sit amet.</p>
-                <p class="client">Client Name, Time</p>
-                <a href="?" class="learnbut">Learn More</a>
-        </div>
-        <div class="test-tile">
-                <img src="?" alt = "An screenshot of one of the sites I designed.">
-                <p class="quote">Lorem ipsum dolor sit amet.</p>
-                <p class="client">Client Name, Time</p>
-                <a href="?" class="learnbut">Learn More</a>
-        </div>
 	</div>
     </main>
     <footer>
@@ -107,7 +72,7 @@
             <h3>Web Designer</h3>
             <hr />
 	    <a href = "mailto:rockwood@rfrankweb.com">rockwood@rfrankweb.com</a><br />
-            <p href = "tel:406-905-1456">(406) 905 1456</p>
+            <a  href = "tel:406-905-1456">(406) 905 1456</a>
         </div>
         <div id="sitemap">
 		<a href="./index.html">Home</a></br>
@@ -125,7 +90,12 @@
 	</div>
 	<p>©2019 Rockwood Frank, Web Designer. All Rights Reserved.</p>
     </footer>
-    <script type = "text/javascript" src = "js/index.js">
+    <script type = "text/javascript" src = "js/testRender.js">
     </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+	    AOS.init();
+    </script>
+
 </body>
 </html>

@@ -7,6 +7,18 @@ $yellow: #db9d47;
 @use 'header';
 @use 'footer';
 
+@keyframes parUp
+{
+	from { bottom: 0; }
+	to { bottom: 4rem; }
+}	
+
+@keyframes parDown
+{
+	from { bottom: 4rem; }
+	to { bottom: 0; }
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -19,14 +31,28 @@ body
 	main  
 	{
 		min-height: 100vh; 
-		padding: 3rem;
 		#intro
-		{ padding-bottom: 3rem; }
+		{ margin: 2rem; }
 		#test-container
 		{
+			.test-tile:hover > .overlay
+			{
+				opacity: 0.5;
+				transition: all 0.5s;
+			}
+			.test-tile:hover > p
+			{
+				display: block !important;
+				position: relative;
+				color: white;
+				z-index: 45;
+				animation-name: parUp;
+				animation-duration: 0.5s;
+				animation-fill-mode: forwards;
+			}
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
+			justify-content: space-around;
 			color: black;
 			a
 			{
@@ -41,11 +67,45 @@ body
 			{
 				background-color: white;
 				margin: 15px;
-				min-width: 25rem;
+				min-width: 23rem;
+				max-height: 18rem;
+				.quote
+				{
+					font-weight: bold;
+					font-size: large;
+				}
+				p 
+				{ 
+					padding-left: 1rem; 
+					padding-bottom: 0.2rem;
+					position: relative;
+					bottom: 0rem;
+					animation-name: parDown;
+					animation-duration: 0.5s;
+					animation-fill-mode: forwards;
+					z-index: 45;
+					transition: color 1s;
+				}
+				.back-img
+				{
+					height: 13rem;
+					background-size: contain !important;
+					background-repeat: no-repeat !important;
+				}
 				img
 				{
-					width: 100%;
+					width: 25rem; 
 					height: auto;
+				}
+				.overlay 
+				{
+					width: 100%;
+					height: 100%;
+					position: relative;
+					background: black;
+					transition: opacity 0.5s;
+					bottom: 16.28rem;
+					opacity: 0;
 				}
 			}
 		}

@@ -7,6 +7,19 @@ $yellow: #db9d47;
 @use 'header';
 @use 'footer';
 
+@keyframes parUp
+{
+	from { bottom: 0; }
+	to { bottom: 4rem; }
+}	
+
+@keyframes parDown
+{
+	from { bottom: 4rem; }
+	to { bottom: 0; }
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -15,31 +28,31 @@ body {
     font-family: Big John PRO, sans-serif;
     background-color: #305789;
     color: white;
+    a, input
+    {
+	  transition: background-color 0.2s, color 0.2s
+    } 
     main {
         #hero {
             background-image: url("../images/back-1-new.png");
             background-repeat: no-repeat;
             background-position: right;
-            background-size: 100%;
-            min-height: 70vh;
-            padding-bottom: 20px;
+            background-size: cover;
             #hero-text {
                 position: relative;
                 left: 50vw;
                 background-color: white;
                 color: $black;
-                width: 35vw;
-                padding: 40px;
-                top: 100px;
-                padding-left: 60px;
-                padding-top: 0px;
+                padding: 25px;
+		margin: 6rem;
+		display: inline-block;
+		@media ( max-width: 850px )
+		{
+			left: 0;
+			margin: 3rem;
+		}
                 h2 {
-                    transform: rotate(-90deg);
-                    position: relative;
-                    right: 280px;
                     font-weight: normal;
-                    font-size: 30px;
-                    bottom: 30px;
                 }
                 h1 {
                     font-size: 45px;
@@ -72,6 +85,7 @@ body {
         }
         #intro {
             display: flex;
+	    flex-wrap: wrap;
 	    padding: 5vw;
             div {
                 color: $black;
@@ -79,7 +93,8 @@ body {
             }
             #convince {
                 background-color: white;
-		margin-right: 10vw;
+		padding: 1rem;
+		width: 40rem;
                 .big-red {
                     color: $red;
 		    font-size: xx-large;
@@ -89,35 +104,31 @@ body {
 		    padding: 10px;
                 }
                 #headline {
-                    transform: rotate(-90deg);
-                    position: relative;
-                    right: 270px;
                     font-weight: normal;
                     font-size: 23px;
-                    top: 100px;
 		    z-index: 3;
                 }
                 #other {
                     padding-left: 40px;
                 }
-		#everything-else {
-			padding-left: 20px;
-			.headlines-secondary {
-				display:flex;
-				align-items: center;
-				.big-red {
-					padding-left: 5px;
-				}
-			}
-			strong {
-				color: $red;
-			}
-			h1 .big-red {
+		.headlines-secondary {
+			display:flex;
+			align-items: center;
+			.big-red {
 				padding-left: 5px;
 			}
 		}
-		
+		strong {
+			color: $red;
+		}
+		h1 .big-red {
+			padding-left: 5px;
+		}
             }
+	    #sec-cont
+	    {
+		    width: 30rem;
+	    }
 		#true-intro {
 			background-color:white;
 			margin: 0px !important;
@@ -125,10 +136,9 @@ body {
 			max-width: 60vw;
 			h2 {
 				color: $yellow;
-				font-size: xx-large;
 			}
 			p {
-				font-size: x-large;
+				font-size: large;
 			}
 			strong {
 				color: $yellow;
@@ -148,10 +158,6 @@ body {
 	#services-home
 	{
 		padding: 50px;
-		h1
-		{
-			font-size: xx-large;
-		}
 		#tiles-sec
 		{
 			display: flex;
@@ -167,7 +173,7 @@ body {
 				width: 300px;
 				margin: 30px;
 				padding: 30px;
-	   			height: 300px;
+	   			min-height: 300px;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
@@ -281,15 +287,55 @@ body {
 				padding-top: 15px;
 				padding-bottom: 15px;
 				color: white;
+				text-decoration: none;
 			}
 		}
 	}
 	#testimonials
 	{
+		h1 { padding-left: 5rem; }
+
+		.test-tile:hover > .overlay
+		{
+			opacity: 0.5 !important;
+		}
+		.test-tile:hover > p
+		{
+			display: block !important;
+			position: relative;
+			color: white;
+			z-index: 45;
+			animation-name: parUp !important;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			opacity: 1 !important;
+		}
+		#test-cta-cont
+		{
+			display: flex;
+			align-items: center;
+			padding: 5rem;
+			justify-content: center;
+			padding: 2rem;
+		}
+		#test-cta
+		{ 
+			padding: 15px 30px;
+		       	color: white;
+			background-color: $red;
+			border: 1px solid $red;
+			text-decoration: none;
+		}
+		#test-cta:hover
+		{
+			color: $red;
+			background: none;
+		}
 		#test-container
 		{
 			display: flex;
-			justify-content: space-between;
+			flex-wrap: wrap;
+			justify-content: space-around;
 			color: black;
 			a
 			{
@@ -304,11 +350,45 @@ body {
 			{
 				background-color: white;
 				margin: 15px;
-				min-width: 25rem;
-				img
+				min-width: 23rem;
+				max-height: 15rem;
+				.quote
 				{
+					font-weight: bold;
+					font-size: large;
+				}
+				.client
+				{
+					max-height: 0;
+					opacity: 0;
+					transition: opacity 1s;
+				}
+				p 
+				{ 
+					padding-left: 1rem; 
+					padding-bottom: 0.2rem;
+					position: relative;
+					bottom: 0rem;
+					animation-name: parDown;
+					animation-duration: 0.5s;
+					animation-fill-mode: forwards;
+					transition: color 0.5s;
+				}
+				.back-img
+				{
+					height: 13rem;
+					background-size: contain !important;
+					background-repeat: no-repeat !important;
+				}
+				.overlay
+				{
+					background: black;
 					width: 100%;
-					height: auto;
+					height: 100%;
+					position: relative;
+					bottom: 14.9rem;
+					opacity: 0;
+					transition: opacity 0.5s;
 				}
 			}
 		}
@@ -318,6 +398,8 @@ body {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
 		div
 		{
 			padding: 5rem;
@@ -334,7 +416,7 @@ body {
 			display: flex;
 			flex-direction: column;
           		justify-content: stretch;
-			min-width: 30rem;
+			min-width: 25;
 		}
 		input
 		{
@@ -342,6 +424,7 @@ body {
 			padding-left: 1rem;
 			border: none;
 		}
+		textarea { padding: 1rem; }
 		#submit-button
 		{
 			margin-top: 20px;

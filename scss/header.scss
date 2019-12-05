@@ -15,7 +15,7 @@ header {
     min-height: 10vh;
     background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     color: #0c3263;
     position: sticky;
     top: 0;
@@ -30,7 +30,6 @@ header {
         }
     }
     nav {
-        padding-right: 20vw;
         align-items: center;
         display: flex;
         justify-content: space-around;
@@ -38,6 +37,7 @@ header {
         a {
             text-decoration: none;
             color: #0c3263;
+	    padding: 0 3px;
         }
     }
 }

@@ -8,7 +8,7 @@ header {
   min-height: 10vh;
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   color: #0c3263;
   position: sticky;
   top: 0;
@@ -22,7 +22,6 @@ header #logo #main-logo {
   height: 8vh;
 }
 header nav {
-  padding-right: 20vw;
   align-items: center;
   display: flex;
   justify-content: space-around;
@@ -31,6 +30,7 @@ header nav {
 header nav a {
   text-decoration: none;
   color: #0c3263;
+  padding: 0 3px;
 }
 
 footer {
@@ -59,6 +59,22 @@ footer #buttons {
   max-width: 30rem;
 }
 
+@keyframes parUp {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 4rem;
+  }
+}
+@keyframes parDown {
+  from {
+    bottom: 4rem;
+  }
+  to {
+    bottom: 0;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -69,32 +85,32 @@ body {
   background-color: #305789;
   color: white;
 }
+body a, body input {
+  transition: background-color 0.2s, color 0.2s;
+}
 body main #hero {
   background-image: url("../images/back-1-new.png");
   background-repeat: no-repeat;
   background-position: right;
-  background-size: 100%;
-  min-height: 70vh;
-  padding-bottom: 20px;
+  background-size: cover;
 }
 body main #hero #hero-text {
   position: relative;
   left: 50vw;
   background-color: white;
   color: #122e28;
-  width: 35vw;
-  padding: 40px;
-  top: 100px;
-  padding-left: 60px;
-  padding-top: 0px;
+  padding: 25px;
+  margin: 6rem;
+  display: inline-block;
+}
+@media (max-width: 850px) {
+  body main #hero #hero-text {
+    left: 0;
+    margin: 3rem;
+  }
 }
 body main #hero #hero-text h2 {
-  transform: rotate(-90deg);
-  position: relative;
-  right: 280px;
   font-weight: normal;
-  font-size: 30px;
-  bottom: 30px;
 }
 body main #hero #hero-text h1 {
   font-size: 45px;
@@ -123,6 +139,7 @@ body main #hero #hero-text #hero-cta #cta-2:hover {
 }
 body main #intro {
   display: flex;
+  flex-wrap: wrap;
   padding: 5vw;
 }
 body main #intro div {
@@ -131,7 +148,8 @@ body main #intro div {
 }
 body main #intro #convince {
   background-color: white;
-  margin-right: 10vw;
+  padding: 1rem;
+  width: 40rem;
 }
 body main #intro #convince .big-red {
   color: #af414a;
@@ -142,32 +160,28 @@ body main #intro #convince p {
   padding: 10px;
 }
 body main #intro #convince #headline {
-  transform: rotate(-90deg);
-  position: relative;
-  right: 270px;
   font-weight: normal;
   font-size: 23px;
-  top: 100px;
   z-index: 3;
 }
 body main #intro #convince #other {
   padding-left: 40px;
 }
-body main #intro #convince #everything-else {
-  padding-left: 20px;
-}
-body main #intro #convince #everything-else .headlines-secondary {
+body main #intro #convince .headlines-secondary {
   display: flex;
   align-items: center;
 }
-body main #intro #convince #everything-else .headlines-secondary .big-red {
+body main #intro #convince .headlines-secondary .big-red {
   padding-left: 5px;
 }
-body main #intro #convince #everything-else strong {
+body main #intro #convince strong {
   color: #af414a;
 }
-body main #intro #convince #everything-else h1 .big-red {
+body main #intro #convince h1 .big-red {
   padding-left: 5px;
+}
+body main #intro #sec-cont {
+  width: 30rem;
 }
 body main #intro #true-intro {
   background-color: white;
@@ -177,10 +191,9 @@ body main #intro #true-intro {
 }
 body main #intro #true-intro h2 {
   color: #db9d47;
-  font-size: xx-large;
 }
 body main #intro #true-intro p {
-  font-size: x-large;
+  font-size: large;
 }
 body main #intro #true-intro strong {
   color: #db9d47;
@@ -196,9 +209,6 @@ body main #intro #pers-pic p {
 body main #services-home {
   padding: 50px;
 }
-body main #services-home h1 {
-  font-size: xx-large;
-}
 body main #services-home #tiles-sec {
   display: flex;
   flex-wrap: wrap;
@@ -213,7 +223,7 @@ body main #services-home #tiles-sec div {
   width: 300px;
   margin: 30px;
   padding: 30px;
-  height: 300px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -310,10 +320,46 @@ body main #services-home #tiles-sec .tiles-button {
   padding-top: 15px;
   padding-bottom: 15px;
   color: white;
+  text-decoration: none;
+}
+body main #testimonials h1 {
+  padding-left: 5rem;
+}
+body main #testimonials .test-tile:hover > .overlay {
+  opacity: 0.5 !important;
+}
+body main #testimonials .test-tile:hover > p {
+  display: block !important;
+  position: relative;
+  color: white;
+  z-index: 45;
+  animation-name: parUp !important;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 1 !important;
+}
+body main #testimonials #test-cta-cont {
+  display: flex;
+  align-items: center;
+  padding: 5rem;
+  justify-content: center;
+  padding: 2rem;
+}
+body main #testimonials #test-cta {
+  padding: 15px 30px;
+  color: white;
+  background-color: #af414a;
+  border: 1px solid #af414a;
+  text-decoration: none;
+}
+body main #testimonials #test-cta:hover {
+  color: #af414a;
+  background: none;
 }
 body main #testimonials #test-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   color: black;
 }
 body main #testimonials #test-container a {
@@ -326,16 +372,48 @@ body main #testimonials #test-container a:hover {
 body main #testimonials #test-container .test-tile {
   background-color: white;
   margin: 15px;
-  min-width: 25rem;
+  min-width: 23rem;
+  max-height: 15rem;
 }
-body main #testimonials #test-container .test-tile img {
+body main #testimonials #test-container .test-tile .quote {
+  font-weight: bold;
+  font-size: large;
+}
+body main #testimonials #test-container .test-tile .client {
+  max-height: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+body main #testimonials #test-container .test-tile p {
+  padding-left: 1rem;
+  padding-bottom: 0.2rem;
+  position: relative;
+  bottom: 0rem;
+  animation-name: parDown;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  transition: color 0.5s;
+}
+body main #testimonials #test-container .test-tile .back-img {
+  height: 13rem;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+body main #testimonials #test-container .test-tile .overlay {
+  background: black;
   width: 100%;
-  height: auto;
+  height: 100%;
+  position: relative;
+  bottom: 14.9rem;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 body main #contact {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 body main #contact div {
   padding: 5rem;
@@ -348,12 +426,15 @@ body main #contact form {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  min-width: 30rem;
+  min-width: 25;
 }
 body main #contact input {
   height: 3rem;
   padding-left: 1rem;
   border: none;
+}
+body main #contact textarea {
+  padding: 1rem;
 }
 body main #contact #submit-button {
   margin-top: 20px;

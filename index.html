@@ -8,12 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link href="css/Big John PRO/stylesheet.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Rockwood Frank - Web Designer - Freelance Modern Web Designer for Small Businesses</title>
 </head>
 <body>
     <main>
       <section id="hero">
-          <div id="hero-text">
+          <div id="hero-text" data-aos = "fade-up">
             <div id="hero-intro">
               <h2>I make websites</h2>
               <p>that are</p>
@@ -25,13 +26,13 @@
               <h1><span id="hero3">Beautiful.</span></h1>
             </div>
             <div id="hero-cta">
-              <a href="?">Let's chat.</a>
-              <a id = "cta-2" href="?">See my work</a>
+              <a href="./contact.html">Let's chat.</a>
+              <a id = "cta-2" href="./portfolio.html">See my work</a>
             </div>
           </div>
         </section>
         <header>
-            <div id="logo">
+            <div id="logo" data-aos = "fade" data-aos-delay = "50">
               <svg
                 id="main-logo"
                 style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;"
@@ -67,7 +68,7 @@
                 <span id="first">Rockwood Frank</span><br /><span id="last">Web Designer</span>
               </p>
             </div>
-            <nav>
+            <nav data-aos = "fade-in" data-aos-delay = "50">
               <a href= "./index.html">Home</a>
               <a href="./contact.html">Contact</a>
               <a href="./portfolio.html">Portfolio</a>
@@ -77,11 +78,10 @@
         </header>
         <section id="intro">
             <div id="convince">
-              <h1 id="headline">Your business needs a great website.</h1>
-	      <div id = "everything-else">
-              <h1 class="big-red">Why?</h1>
+              <h1 id="headline" data-aos = "fade">Your business needs a great website.</h1>
+              <h1 class="big-red" data-aos = "fade">Why?</h1>
               <p>Well, an exceptional site...</p>
-	      <div class = "headlines-secondary">
+	      <div class = "headlines-secondary" data-aos = "fade">
               <svg
                 id="conversion-svg"
                 width="62"
@@ -99,7 +99,7 @@
               <h1 class="big-red">Brings in more traffic</h1>
 	      </div>
               <p>and</p>
-	      <div class = "headlines-secondary">
+	      <div class = "headlines-secondary" data-aos = "fade">
               <svg
                 width="62"
                 height="62"
@@ -133,107 +133,94 @@
                   </clipPath>
                 </defs>
               </svg>
-              <h1 class="big-red">Increases your conversion rate.</h1>
+              <h1 class="big-red" data-aos = "fade">Increases your conversion rate.</h1>
 	      </div>
-              <p>
+              <p data-aos = "fade">
                 You’re busy running an amazing business. You need someone you can trust
                 to build a <strong>first-rate site</strong> so that
                 <strong>clients will come to you.</strong>
               </p>
-	      </div>
             </div>
 		<div id = "sec-cont">
             <div id="true-intro">
-              <h2>That's where I come in.</h2>
-              <p>
-                I am a designer and developer with
+              <h2 data-aos = "fade">That's where I come in.</h2>
+              <p data-aos = "fade">
+                As a designer and developer with
                 <strong>years of experience</strong> in the industry, I have dedication
                 to going <strong>above and beyond</strong> with every client.
               </p>
             </div>
-            <div id="pers-pic">
+            <div id="pers-pic" data-aos = "fade-up">
               <img src="?" alt="A picture of me, Rockwood Frank" />
               <p>This is me.</p>
             </div>
 		</div>
         </section>
         <section id="services-home">
-            <h1>So what, exactly, do I do?</h1>
+            <h1 data-aos = "fade-right">So what, exactly, do I do?</h1>
             <div id="tiles-sec">
-                <div id="design-tile">
+                <div id="design-tile" data-aos = "fade-up">
 			<h2>I start with a brand new design for your site.</h2>
                   <p>I design a site that is custom tailored to your business, starting with the basics, 
                   and then meticulously refining until I get every detail perfect.</p>
-		  <a class = "tiles-button">Learn More</a>
+		  <a class = "tiles-button" href = "services#design-tile">Learn More</a>
               </div>
-              <div id="dev-tile">
+              <div id="dev-tile" data-aos = "fade-up" data-aos-delay = "150">
                   <h2>I create the code that makes up the site.</h2>
                   <p>I work with HTML, CSS, and Javascript(the 
                   languages of the web) to make the site look great on every device, everyewhere.</p>
-		  <a class = "tiles-button">Learn More</a>
+		  <a class = "tiles-button" href = "services#dev-tile">Learn More</a>
               </div>
-              <div id="seo-tile">
+              <div id="seo-tile" data-aos = "fade-up" data-aos-delay = "300">
                   <h2>I work with SEO so your business is found online.</h2>
                   <p>To make sure that every business is one of the first in
                    Google search results, I work through an intricate process to optimize your site.</p>
-		  <a class = "tiles-button">Learn More</a>
+		  <a class = "tiles-button" href = "services#biz-tile">Learn More</a>
               </div>
-              <div id="dev-ops">
-                  <h2>I manage Development Operations(DevOps) such as domain and hosting.</h2>
-                  <p>When a website is ready for launch, it needs to be hosted on server, as well as 
-                  connected to a domain. I do all of this so that you don’t have to.</p>
- 		  <a class = "tiles-button">Learn More</a> 
+              <div id="dev-ops" data-aos = "fade-up">
+                 <h2>I manage Development Operations for the site.</h2>
+                  <p>When a site is ready to be launched, I manage getting the site on the server, and making sure it is running properly, as well as connecting it to a domain name.</p>
+ 		  <a class = "tiles-button" href = "services#biz-tile">Learn More</a> 
               </div>
-              <div id="online-tile">
+              <div id="online-tile" data-aos = "fade-up" data-aos-delay = "150">
                   <h2>I make sure your business has a strong online presence.</h2>
                   <p>I guide you through the work of Google My Business and more, to help potential cusomters find you even more.</p>
-		  <a class = "tiles-button">Learn More</a>
+		  <a class = "tiles-button" href = "services#biz-tile">Learn More</a>
               </div>
-              <div id="pricing-tile">
+              <div id="pricing-tile" data-aos = "fade-up" data-aos-delay = "300">
                   <h2>How do I charge for my work?"</h2>
                   <p>I use a fixed rate pricing startegy that is fair to you, and values my work.</p>
-		  <a class = "tiles-button">Learn More</a>
+		  <a class = "tiles-button" href = "services#pricing-tile">Learn More</a>
               </div>
             </div>
         </section>
         <section id="testimonials">
-          <h1>What I've done before...</h1>
+          <h1 data-aos = "fade-right">What I've done before...</h1>
 	  <div id = "test-container">
-          <div class="test-tile">
-              <img src = "./images/Screenshot-1.png" alt = "Screenshot of Website">
-              <p>Lorem, ipsum dolor.</p>
-              <p class="client">Client A</p>
-              <a href="?" class="cta">See More</a>
-          </div>
-          <div class="test-tile">
-              <img src = "./images/Screenshot-2.png" alt = "Screenshot of Website">
-              <p>Lorem, ipsum dolor.</p>
-              <p class="client">Client B</p>
-              <a href="?" class="cta">See More</a>
-          </div>
-          <div class="test-tile">
-              <img src = "./images/ex-site.jpg" alt = "Screenshot of Website">
-              <p>Lorem, ipsum dolor.</p>
-              <p class="client">Client C</p>
-              <a href="?" class="cta">See More</a>
-          </div>
+	  </div>
+	  <div id = "test-cta-cont">
+	  	<a id = "test-cta" href = "portfolio">See More</a>
 	  </div>
       </section>
       <section id="contact">
-          <div id="con-info">
+          <div id="con-info" data-aos = "fade-right">
               <h1>Let's Get in Touch</h1>
               <p>Want a great website? You can contact me with this contact form. I typically reply within 2 business days.</p>
           </div>
-          <div id="con-form">
-              <form action="">
-                  Name
-                  <input type="text" name = "name" id="name" placeholder = "John Doe" required>
-                  Email
-                  <input type="email" name="email" id="email" placeholder = "johndoe@example.com" required>
-                  Message
-                  <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                  <input type="submit" id="submit-button" value="Submit">
-              </form>
+	  	<form class="gform pure-form pure-form-stacked" method="POST" data-email="rockwoodfrank@gmail.com"
+			  action="https://script.google.com/macros/s/AKfycbxzFng10I7S5dw9mRkIcyasmH7vR-kC8V_FAzq4BgB3b9_ASaA/exec">
+			Name
+			<input type = "text" name = "name" placeholder = "John Doe" data-aos = "fade-left" required/>
+			Email
+			<input data-aos = "fade-left"type = "email" name = "email" placeholder = "johndoe@example.com"required/>
+			Message
+			<textarea data-aos = "fade-left" rows = "5" cols = "50" name = "message" id = "message" placeholder = "How can I help?" required></textarea>
+			<input type = "submit" id = "submit-button"/>
+			<div style="display:none" class="thankyou_message">
+				  <p><em>Thanks</em> for contacting me! I will get back to you soon!
+					   </p>
+			</div>
+		</form>
           </div>
       </section>
     </main>
@@ -244,7 +231,7 @@
             <h3>Web Designer</h3>
             <hr />
 	    <a href = "mailto:rockwood@rfrankweb.com">rockwood@rfrankweb.com</a><br />
-            <p href = "tel:406-905-1456">(406) 905 1456</p>
+            <a  href = "tel:406-905-1456">(406) 905 1456</a>
         </div>
         <div id="sitemap">
 		<a href="./index.html">Home</a></br>
@@ -262,5 +249,12 @@
 	</div>
 	<p>©2019 Rockwood Frank, Web Designer. All Rights Reserved.</p>
     </footer>
+	<script type = 'text/javascript' src ='js/testRender.js'>
+	</script>
+	<script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+        </script>	
 </body>
 </html>

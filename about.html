@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="icon" href="?">
         <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-        <link href="stylesheets/Big John PRO/stylesheet.css" rel="stylesheet">
+        <link href="css/Big John PRO/stylesheet.css" rel="stylesheet">
 	<link href = "css/about.css" rel = "stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <title>About Me - Rockwood Frank - Web Designer</title>
     </head>
     <body>
@@ -57,13 +58,13 @@
             </nav>
         </header>
         <main>
-            <h1>Allow me to introduce myself...</h1>
+            <h1 data-aos = "fade">Allow me to introduce myself...</h1>
             <div id="main-content">
-                <img src="?" alt="A picture of me">
+                <img src="?" data-aos = "fade-right"alt="A picture of me">
                 <div id="main-text">
-                    <p>Hello, I am Rockwood, your small business web designer, tech enthusiast, front-end developer, and more every day. I live in Montana and am currently finishing my education at Montana State University. In the mean time, I work on websites for businesses like yours!</p>
-                    <h2>Where did it all begin?</h2>
-                    <p>For years, I have had a strong interest in computer science and web development. In 2016, I decided to act on this interest. I taught myself HTML, CSS, and Javascript. I am learning more every day. I push myself to get better and better at development, and I love my job. I would love the chance to work with you, and I hope to get in touch soon!</p>
+                    <p data-aos = "fade-left" data-aos-delay = "150">Hello, I am Rockwood, a small business web designer, tech enthusiast, front-end developer, and more every day. I live in Montana and am currently finishing my education at Montana State University. In the mean time, I work on websites for businesses like yours!</p>
+                    <h2 data-aos = "fade-left" data-aos-delay = "300">Where did it all begin?</h2>
+                    <p data-aos = "fade-left" data-aos-delay = "450">For years, I have had a strong interest in computer science and web development. In 2016, I decided to act on this interest. I taught myself HTML, CSS, and Javascript. I am learning more every day. I push myself to get better and better at development, and I love my job. I would love the chance to work with you, and I hope to get in touch soon!</p>
                 </div>
             </div>
         </main>
@@ -74,7 +75,7 @@
             <h3>Web Designer</h3>
             <hr />
 	    <a href = "mailto:rockwood@rfrankweb.com">rockwood@rfrankweb.com</a><br />
-            <p href = "tel:406-905-1456">(406) 905 1456</p>
+            <a href = "tel:406-905-1456">(406) 905 1456</a>
         </div>
         <div id="sitemap">
 		<a href="./index.html">Home</a></br>
@@ -92,6 +93,9 @@
 	</div>
 	<p>©2019 Rockwood Frank, Web Designer. All Rights Reserved.</p>
     </footer>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+  	</script>
     </body>
 </html>
