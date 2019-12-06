@@ -3,3 +3,4 @@ deployment:
           tasks:
                       - export DEPLOYPATH=/home/kgzrwvux/public_html/
                       - /bin/cp * $DEPLOYPATH
+                      - /bin/cp -R * $DEPLOYPATH
