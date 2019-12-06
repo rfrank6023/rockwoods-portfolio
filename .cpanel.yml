@@ -2,5 +2,5 @@
 deployment:
           tasks:
                       - export DEPLOYPATH=/home/kgzrwvux/public_html/
-                      - /bin/cp * $DEPLOYPATH
                       - /bin/cp -R images $DEPLOYPATH
+                      - /bin/cp * $DEPLOYPATH
