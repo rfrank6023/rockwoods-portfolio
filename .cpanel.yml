@@ -1,6 +1,14 @@
 ---
 deployment:
           tasks:
-                - export DEPLOYPATH=/home/user/public_html/
-                - /bin/cp index.html $DEPLOYPATH
-                - /bin/cp css/index.css $DEPLOYPATH
+                      - export DEPLOYPATH=/home/user/public_html/
+                            - /bin/cp -R images $DEPLOYPATH
+                            - /bin/cp -R index.html $DEPLOYPATH
+                            - /bin/cp -R about.html $DEPLOYPATH
+                            - /bin/cp -R contact.html $DEPLOYPATH
+                            - /bin/cp -R portfolio.html $DEPLOYPATH
+                            - /bin/cp -R services.html $DEPLOYPATH
+                            - /bin/cp -R css $DEPLOYPATH
+                            - /bin/cp -R favicon.ico $DEPLOYPATH
+                            - /bin/cp -R js $DEPLOYPATH
+                            - /bin/cp -R json $DEPLOYPATH
