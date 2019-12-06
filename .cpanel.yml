@@ -2,13 +2,4 @@
 deployment:
           tasks:
                       - export DEPLOYPATH=/home/kgzrwvux/public_html/rockwoods_portfolio
-                            - /bin/cp -R images $DEPLOYPATH
-                            - /bin/cp -R index.html $DEPLOYPATH
-                            - /bin/cp -R about.html $DEPLOYPATH
-                            - /bin/cp -R contact.html $DEPLOYPATH
-                            - /bin/cp -R portfolio.html $DEPLOYPATH
-                            - /bin/cp -R services.html $DEPLOYPATH
-                            - /bin/cp -R css $DEPLOYPATH
-                            - /bin/cp -R favicon.ico $DEPLOYPATH
-                            - /bin/cp -R js $DEPLOYPATH
-                            - /bin/cp -R json $DEPLOYPATH
+                            - /bin/cp * $DEPLOYPATH
