@@ -1,6 +1,5 @@
 ---
 deployment:
           tasks:
-                      - export DEPLOYPATH=/home/kgzrwvux/public_html/rockwoods_portfolio        
+                      - export DEPLOYPATH=/home/kgzrwvux/public_html/
                       - /bin/cp * $DEPLOYPATH
-                      - /bin/cp images $DEPLOYPATH
