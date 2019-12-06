@@ -3,4 +3,4 @@ deployment:
           tasks:
                       - export DEPLOYPATH=/home/kgzrwvux/public_html/rockwoods_portfolio        
                       - /bin/cp * $DEPLOYPATH
-                        - /bin/cp images $DEPLOYPATH
+                      - /bin/cp images $DEPLOYPATH
