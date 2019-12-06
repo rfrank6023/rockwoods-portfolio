@@ -1,6 +1,6 @@
 ---
 deployment:
           tasks:
-                      - export DEPLOYPATH=/home/kgzrwvux/rfrankweb.com/
+                      - export DEPLOYPATH=/home/kgzrwvux/public_html/rfrankweb.com
                       - /bin/cp -R * $DEPLOYPATH
                       - /bin/cp * $DEPLOYPATH
