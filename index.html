@@ -274,7 +274,11 @@
 						placeholder="How can I help?"
 						required
 					></textarea>
-					<div class="g-recaptcha" data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb" required></div>
+					<div
+						class="g-recaptcha"
+						data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb"
+						required
+					></div>
 					<br />
 					<input type="submit" id="submit-button" />
 					<div style="display:none" class="thankyou_message">
@@ -328,6 +332,13 @@
 		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 		<script>
 			AOS.init();
+			window.onload = function() {
+				var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+				if ($recaptcha) {
+					$recaptcha.setAttribute('required', 'required');
+				}
+			};
 		</script>
 	</body>
 </html>
