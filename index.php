@@ -242,7 +242,7 @@
 					</p>
 				</div>
 				<form
-					class="gform pure-form pure-form-stacked"
+					class="form"
 					method="POST"
 					data-url="document.URL"
 					action="
@@ -307,8 +307,7 @@ $conn->close();
 					<input type="submit" id="submit-button" />
 					<div style="display:none" class="thankyou_message">
 						<p>
-							<em>Thanks</em> for contacting me! I will get back to you soon!
-						</p>
+							<em>Thanks</em> for contacting me! </p>
 					</div>
 				</form>
 			</section>
@@ -348,21 +347,9 @@ $conn->close();
 			<p>©2019 Rockwood Frank, Web Designer. All Rights Reserved.</p>
 		</footer>
 		<script type="text/javascript" src="js/testRender.js"></script>
-		<script
-			data-cfasync="false"
-			type="text/javascript"
-			src="form-submission-handler.js"
-		></script>
 		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 		<script>
 			AOS.init();
-			window.onload = function() {
-				var $recaptcha = document.querySelector('#g-recaptcha-response');
-
-				if ($recaptcha) {
-					$recaptcha.setAttribute('required', 'required');
-				}
-			};
 		</script>
 	</body>
 </html>
