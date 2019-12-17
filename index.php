@@ -242,47 +242,12 @@
 					</p>
 				</div>
 <?php
-// define variables and set to empty values
-$nameErr = $emailErr = $websiteErr = "";
 $name = $email = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
     $name = test_input($_POST["name"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed";
-    }
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
     $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
-    }
-  }
-    
-  if (empty($_POST["website"])) {
-    $website = "";
-  } else {
-    $website = test_input($_POST["website"]);
-    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL";
-    }
-  }
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
     $comment = test_input($_POST["comment"]);
-  }
-
 }
 
 function test_input($data) {
@@ -293,18 +258,12 @@ function test_input($data) {
 }
 ?>
 
-<p><span class="error">* required field</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name" value="<?php echo $name;?>">
-  <span class="error">* <?php echo $nameErr;?></span>
+<form method="post" action="index.php/#contact">  
+  Name: <input type="text" name="name" value="<?php echo $name;?>" required>
   <br><br>
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-  <span class="error">* <?php echo $emailErr;?></span>
+  E-mail: <input type="email" name="email" value="<?php echo $email;?>" required>
   <br><br>
-  Website: <input type="text" name="website" value="<?php echo $website;?>">
-  <span class="error"><?php echo $websiteErr;?></span>
-  <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+  Comment: <textarea name="comment" rows="5" cols="40" required><?php echo $comment;?></textarea>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
@@ -330,6 +289,9 @@ if (!empty($_POST['comment'])) {
 	} else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
+	$_POST['name'] = '';
+	$_POST['email'] = '';
+	$_POST['comment'] = '';
 
 	$conn->close();
 }
