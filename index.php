@@ -241,80 +241,10 @@
 						typically reply within 2 business days.
 					</p>
 				</div>
-				<form
-					class="form"
-					method="POST"
-					data-url="document.URL"
-					action="
-<?php
-$servername = "localhost";
-$username = "kgzrwvux_root";
-$password = "frank2752!";
-$dbname = "kgzrwvux_user_responses";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "INSERT INTO user_responses
-VALUES ('Rockywood!', 'Woo!', 'john@example.com')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-?>
-"
-				>
-					Name
-					<input
-						type="text"
-						name="name"
-						placeholder="John Doe"
-						data-aos="fade-left"
-						required
-					/>
-					Email
-					<input
-						data-aos="fade-left"
-						type="email"
-						name="email"
-						placeholder="johndoe@example.com"
-						required
-					/>
-					Message
-					<textarea
-						data-aos="fade-left"
-						rows="5"
-						cols="50"
-						name="message"
-						id="message"
-						placeholder="How can I help?"
-						required
-					></textarea>
-					<div
-						class="g-recaptcha"
-						data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb"
-						required
-					></div>
-					<br />
-					<input type="submit" id="submit-button" />
-					<div style="display:none" class="thankyou_message">
-						<p>
-							<em>Thanks</em> for contacting me! </p>
-					</div>
-				</form>
-			</section>
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $emailErr = $websiteErr = "";
+$name = $email = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -353,11 +283,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = test_input($_POST["comment"]);
   }
 
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
 }
 
 function test_input($data) {
@@ -368,7 +293,6 @@ function test_input($data) {
 }
 ?>
 
-<h2>PHP Form Validation Example</h2>
 <p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   Name: <input type="text" name="name" value="<?php echo $name;?>">
@@ -381,12 +305,6 @@ function test_input($data) {
   <span class="error"><?php echo $websiteErr;?></span>
   <br><br>
   Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-  <br><br>
-  Gender:
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
-  <span class="error">* <?php echo $genderErr;?></span>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
@@ -401,8 +319,8 @@ echo $website;
 echo "<br>";
 echo $comment;
 echo "<br>";
-echo $gender;
 ?>
+			</section>
 		</main>
 		<footer>
 			<div id="footer-main">
@@ -445,3 +363,27 @@ echo $gender;
 		</script>
 	</body>
 </html>
+<?php
+$servername = "localhost";
+$username = "kgzrwvux_root";
+$password = "frank2752!";
+$dbname = "kgzrwvux_user_responses";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "INSERT INTO user_responses
+VALUES ('Rockywood!', 'Woo!', 'john@example.com')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
