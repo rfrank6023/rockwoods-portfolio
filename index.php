@@ -19,6 +19,9 @@
 		</title>
 	</head>
 	<body>
+		<?php
+		echo "Hello, World!"
+		?>
 		<main>
 			<section id="hero">
 				<div id="hero-text" data-aos="fade-up">
