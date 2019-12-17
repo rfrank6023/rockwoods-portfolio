@@ -258,7 +258,7 @@ function test_input($data) {
 }
 ?>
 
-<form method="post" action="index.php/#contact">  
+<form method="post" action="#contact">  
   Name: <input type="text" name="name" value="<?php echo $name;?>" required>
   <br><br>
   E-mail: <input type="email" name="email" value="<?php echo $email;?>" required>
@@ -289,9 +289,9 @@ if (!empty($_POST['comment'])) {
 	} else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
-	$_POST['name'] = '';
-	$_POST['email'] = '';
-	$_POST['comment'] = '';
+	$name = '';
+	$email = '';
+	$comment = '';
 
 	$conn->close();
 }
