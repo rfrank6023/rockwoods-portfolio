@@ -309,8 +309,7 @@ function test_input($data) {
   <input type="submit" name="submit" value="Submit">  
 </form>
 <?php
-if (!empty($_POST['comment'])) 
-{
+if (!empty($_POST['comment'])) { 
 	$servername = "localhost";
 	$username = "kgzrwvux_root";
 	$password = "frank2752!";
