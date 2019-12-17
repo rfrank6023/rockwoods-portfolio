@@ -308,17 +308,32 @@ function test_input($data) {
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
-
 <?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $website;
-echo "<br>";
-echo $comment;
-echo "<br>";
+if (!empty($_POST['comment'])) 
+{
+	$servername = "localhost";
+	$username = "kgzrwvux_root";
+	$password = "frank2752!";
+	$dbname = "kgzrwvux_user_responses";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "INSERT INTO user_responses
+	VALUES ('Server filled', 'example.com!', 'A form was submitted!')";
+
+	if ($conn->query($sql) === TRUE) {
+	    echo "We have NOT recieved your request! Thank you!"
+	} else {
+	    echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+
+	$conn->close();
+}
 ?>
 			</section>
 		</main>
@@ -363,27 +378,3 @@ echo "<br>";
 		</script>
 	</body>
 </html>
-<?php
-$servername = "localhost";
-$username = "kgzrwvux_root";
-$password = "frank2752!";
-$dbname = "kgzrwvux_user_responses";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "INSERT INTO user_responses
-VALUES ('Rockywood!', 'Woo!', 'john@example.com')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-?>
