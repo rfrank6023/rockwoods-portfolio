@@ -260,11 +260,13 @@ function test_input($data) {
 
 <form method="post" action="#contact">  
   Name: <input type="text" name="name" value="<?php echo $name;?>" required>
-  <br><br>
+  <br>
   E-mail: <input type="email" name="email" value="<?php echo $email;?>" required>
-  <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40" required><?php echo $comment;?></textarea>
-  <br><br>
+  <br>
+  Message: <textarea name="comment" rows="5" cols="40" required><?php echo $comment;?></textarea>
+  <br>
+<div class="g-recaptcha" data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb"></div>
+	<br>
   <input type="submit" name="submit" value="Submit">  
 </form>
 <?php
