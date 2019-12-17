@@ -333,5 +333,6 @@ if (!empty($_POST['comment'])) {
 		<script>
 			AOS.init();
 		</script>
+		<script type = "text/javascript" src = "site-deter.js"></script>
 	</body>
 </html>
