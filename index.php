@@ -21,7 +21,7 @@
 	<body>
 <?php
 $servername = "localhost";
-$username = "root";
+$username = "kgzrwvux_root";
 $password = "frank2752!";
 $dbname = "kgzrwvux_user_responses";
 
