@@ -326,7 +326,7 @@ if (!empty($_POST['comment'])) {
 	VALUES ('Server filled', 'example.com!', 'A form was submitted!')";
 
 	if ($conn->query($sql) === TRUE) {
-	    echo "We have NOT recieved your request! Thank you!"
+	    echo "We have NOT recieved your request! Thank you!";
 	} else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
