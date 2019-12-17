@@ -19,30 +19,6 @@
 		</title>
 	</head>
 	<body>
-<?php
-$servername = "localhost";
-$username = "kgzrwvux_root";
-$password = "frank2752!";
-$dbname = "kgzrwvux_user_responses";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "INSERT INTO user_responses
-VALUES ('John', 'Doe', 'john@example.com')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-?>
 		<main>
 			<section id="hero">
 				<div id="hero-text" data-aos="fade-up">
@@ -269,7 +245,32 @@ $conn->close();
 					class="gform pure-form pure-form-stacked"
 					method="POST"
 					data-url="document.URL"
-					action="https://script.google.com/macros/s/AKfycbxzFng10I7S5dw9mRkIcyasmH7vR-kC8V_FAzq4BgB3b9_ASaA/exec"
+					action="
+<?php
+$servername = "localhost";
+$username = "kgzrwvux_root";
+$password = "frank2752!";
+$dbname = "kgzrwvux_user_responses";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "INSERT INTO user_responses
+VALUES ('Rockywood!', 'Woo!', 'john@example.com')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
+"
 				>
 					Name
 					<input
