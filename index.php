@@ -282,7 +282,7 @@ if (!empty($_POST['comment'])) {
 	}
 
 	$sql = "INSERT INTO user_responses
-	VALUES ('" . $_POST['name'] . "', '" . $_POST['email'] . "', '" . $_POST['comment'] . "')";
+	VALUES ('" . $_POST['name'] . "', '" . $_POST['email'] . "', '" . $_POST["comment"] . "')";
 
 	if ($conn->query($sql) === TRUE) {
 	    echo "I have recieved your request! Thank you! I will reply soon!";
