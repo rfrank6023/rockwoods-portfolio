@@ -301,8 +301,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
 		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 		<script>
 			AOS.init();
+			if ( window.location.href == "https://www.blueocean-iptv.com/rfrankweb.com/" ) { document.body.innerText = "We're sorry, but a DNS error is causing this site to load improperly. We are working on the issue."}
 		</script>
-		<script type = "text/javascript" src = "site-deter.js"></script>
 <?php
 $name = $email = $comment = $website = "";
 
