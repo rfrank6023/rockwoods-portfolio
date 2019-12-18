@@ -256,31 +256,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
 	echo "<p>Please check the CAPTCHA box.";
-}
-if (!empty($_POST['comment'])) { 
-	$servername = "localhost";
-	$username = "kgzrwvux_root";
-	$password = "frank2752!";
-	$dbname = "kgzrwvux_user_responses";
-
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
-	}
-
-	$sql = "INSERT INTO user_responses
-	VALUES ('" . $_POST['name'] . "', '" . $_POST['email'] . "', '" . $_POST["comment"] . "')";
-
-	if ($conn->query($sql) === TRUE) {
-	    echo "I have recieved your request! Thank you! I will reply soon!";
-	} else {
-	    echo "Error: " . $sql . "<br>" . $conn->error;
-	}
-	$conn->close();
-}
-?>
+}?>
 			</section>
 		</main>
 		<footer>
@@ -342,6 +318,30 @@ function test_input($data) {
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
+}
+
+if (!empty($_POST['comment'])) { 
+	$servername = "localhost";
+	$username = "kgzrwvux_root";
+	$password = "frank2752!";
+	$dbname = "kgzrwvux_user_responses";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "INSERT INTO user_responses
+	VALUES ('" . $_POST['name'] . "', '" . $_POST['email'] . "', '" . $_POST["comment"] . "')";
+
+	if ($conn->query($sql) === TRUE) {
+	    echo "I have recieved your request! Thank you! I will reply soon!";
+	} else {
+	    echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+	$conn->close();
 }
 ?>
 	</body>
