@@ -333,8 +333,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if($captcha){
 		function capMessage() {
 			echo "<p id = 'capMessage'></p>";
-		}
-	else{
+	} else {
 		function capMessage() {
 	  		echo '<p class="alert alert-warning">Please check the the captcha form.</p>';
 		}
