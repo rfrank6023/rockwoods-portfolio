@@ -309,7 +309,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = test_input($_POST["name"]);
     $email = test_input($_POST["email"]);
     $comment = test_input($_POST["comment"]);
-        $secretKey = '6Lfw_scUAAAAAFX1i5CPYU91WDh4wc1te0rtzklC';
         $captcha = $_POST['g-recaptcha-response'];
 	if(!$captcha){
 	  exit;
