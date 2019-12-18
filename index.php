@@ -252,15 +252,13 @@
 <div class="g-recaptcha" data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb"></div>
 	<br>
   <input type="submit" name="submit" value="Submit">  
-	<?php
-		$message = '';
-		echo $message;
-	?>
-</form>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
 	echo "<p>Please check the CAPTCHA box.";
+} else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['g-recaptcha-response']) {
+	echo "<p>Thanks! I will get back to you soon!</p>"
 }?>
+</form>
 			</section>
 		</main>
 		<footer>
