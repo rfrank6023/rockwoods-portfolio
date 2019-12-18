@@ -85,7 +85,8 @@ body {
   background-color: #305789;
   color: white;
 }
-body a, body input {
+body a,
+body input {
   transition: background-color 0.2s, color 0.2s;
 }
 body main #hero {
@@ -426,7 +427,7 @@ body main #contact form {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  min-width: 25;
+  min-width: 25rem;
 }
 body main #contact input {
   height: 3rem;
@@ -435,6 +436,12 @@ body main #contact input {
 }
 body main #contact textarea {
   padding: 1rem;
+}
+body main #contact .g-recaptcha {
+  padding: 0 !important;
+}
+body main #contact .g-recaptcha div {
+  padding: 0 !important;
 }
 body main #contact #submit-button {
   margin-top: 20px;
