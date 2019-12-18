@@ -241,28 +241,6 @@
 						typically reply within 2 business days.
 					</p>
 				</div>
-<?php
-$name = $email = $comment = $website = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = test_input($_POST["name"]);
-    $email = test_input($_POST["email"]);
-    $comment = test_input($_POST["comment"]);
-        $secretKey = '6Lfw_scUAAAAAFX1i5CPYU91WDh4wc1te0rtzklC';
-        $captcha = $_POST['g-recaptcha-response'];
-	if(!$captcha){
-	  echo '<p class="alert alert-warning">Please check the the captcha form.</p>';
-	  exit;
-	}
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
 
 <form method="post" action="#contact">  
   Name: <input type="text" name="name" value="<?php echo $name;?>" required>
@@ -276,6 +254,7 @@ function test_input($data) {
   <input type="submit" name="submit" value="Submit">  
 </form>
 <?php
+capMessage();
 if (!empty($_POST['comment'])) { 
 	$servername = "localhost";
 	$username = "kgzrwvux_root";
@@ -342,5 +321,33 @@ if (!empty($_POST['comment'])) {
 			AOS.init();
 		</script>
 		<script type = "text/javascript" src = "site-deter.js"></script>
+<?php
+$name = $email = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = test_input($_POST["name"]);
+    $email = test_input($_POST["email"]);
+    $comment = test_input($_POST["comment"]);
+        $secretKey = '6Lfw_scUAAAAAFX1i5CPYU91WDh4wc1te0rtzklC';
+        $captcha = $_POST['g-recaptcha-response'];
+	if($captcha){
+		function capMessage() {
+			echo "<p id = 'capMessage'></p>"
+		}
+	else{
+		function capMessage() {
+	  		echo '<p class="alert alert-warning">Please check the the captcha form.</p>';
+		}
+	  exit;
+	}
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 	</body>
 </html>
