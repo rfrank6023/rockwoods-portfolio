@@ -248,6 +248,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = test_input($_POST["name"]);
     $email = test_input($_POST["email"]);
     $comment = test_input($_POST["comment"]);
+	if(!$captcha){
+	  echo '<p class="alert alert-warning">Please check the the captcha form.</p>';
+	  exit;
+	}
 }
 
 function test_input($data) {
