@@ -254,10 +254,11 @@
   <input type="submit" name="submit" value="Submit">  
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
-	echo "<p>Please check the CAPTCHA box.";
+	echo "<p>Please check the CAPTCHA box.</p>";
 } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['g-recaptcha-response']) {
-	echo "<p>Thanks! I will get back to you soon!</p>"
-}?>
+	echo "<p>Thanks! I will get back to you soon!</p>";
+}
+?>
 </form>
 			</section>
 		</main>
