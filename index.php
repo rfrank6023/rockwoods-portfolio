@@ -252,6 +252,10 @@
 <div class="g-recaptcha" data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb"></div>
 	<br>
   <input type="submit" name="submit" value="Submit">  
+	<?php
+		$message = ''
+		echo $message
+	?>
 </form>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
@@ -337,9 +341,9 @@ if (!empty($_POST['comment'])) {
 	VALUES ('" . $_POST['name'] . "', '" . $_POST['email'] . "', '" . $_POST["comment"] . "')";
 
 	if ($conn->query($sql) === TRUE) {
-	    echo "I have recieved your request! Thank you! I will reply soon!";
+	    $message = "I have recieved your request! Thank you! I will reply soon!";
 	} else {
-	    echo "Error: " . $sql . "<br>" . $conn->error;
+	    $message = "Error: " . $sql . "<br>" . $conn->error;
 	}
 	$conn->close();
 }
