@@ -336,10 +336,9 @@ if (!empty($_POST['comment'])) {
 	    die("Connection failed: " . $conn->connect_error);
 	}
 
-	$query = "INSERT INTO user_responses 
-	             VALUES(?, ?, ?)";
-	$stmt = $mysqli->prepare($query);
-	$stmt->bind_param("ss", $_POST['name'], $_POST['email'], $_POST['comment']);
+	$query = "INSERT INTO user_responses VALUES(?, ?, ?)";
+	$stmt = $conn->prepare($query);
+	$stmt->bind_param("sss", $_POST['name'], $_POST['email'], $_POST['comment']);
 	$stmt->execute();	
 
 	if ($conn->query($sql) === TRUE) {
