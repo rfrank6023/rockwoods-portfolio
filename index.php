@@ -253,8 +253,8 @@
 	<br>
   <input type="submit" name="submit" value="Submit">  
 	<?php
-		$message = ''
-		echo $message
+		$message = '';
+		echo $message;
 	?>
 </form>
 <?php
