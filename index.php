@@ -254,7 +254,9 @@
   <input type="submit" name="submit" value="Submit">  
 </form>
 <?php
-capMessage();
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
+	echo "<p>Please check the CAPTCHA box."
+}
 if (!empty($_POST['comment'])) { 
 	$servername = "localhost";
 	$username = "kgzrwvux_root";
@@ -330,13 +332,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = test_input($_POST["comment"]);
         $secretKey = '6Lfw_scUAAAAAFX1i5CPYU91WDh4wc1te0rtzklC';
         $captcha = $_POST['g-recaptcha-response'];
-	if($captcha){
-		function capMessage() {
-			echo "<p id = 'capMessage'></p>";
-	} else {
-		function capMessage() {
-	  		echo '<p class="alert alert-warning">Please check the the captcha form.</p>';
-		}
+	if(!$captcha){
 	  exit;
 	}
 }
