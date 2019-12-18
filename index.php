@@ -332,7 +332,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $captcha = $_POST['g-recaptcha-response'];
 	if($captcha){
 		function capMessage() {
-			echo "<p id = 'capMessage'></p>"
+			echo "<p id = 'capMessage'></p>";
 		}
 	else{
 		function capMessage() {
