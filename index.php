@@ -340,7 +340,7 @@ if (!empty($_POST['comment'])) {
 	$stmt->bind_param("sss", $_POST['name'], $_POST['email'], $_POST['comment']);
 	$stmt->execute();	
 
-	if ($conn->query($sql) === TRUE) {
+	if ($conn->query($query) === TRUE) {
 	    $message = "I have recieved your request! Thank you! I will reply soon!";
 	} else {
 	    $message = "Error: " . $sql . "<br>" . $conn->error;
