@@ -255,7 +255,7 @@
 </form>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
-	echo "<p>Please check the CAPTCHA box."
+	echo "<p>Please check the CAPTCHA box.";
 }
 if (!empty($_POST['comment'])) { 
 	$servername = "localhost";
