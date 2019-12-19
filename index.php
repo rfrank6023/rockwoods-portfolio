@@ -328,10 +328,19 @@ if (!empty($_POST['comment'])) {
 	$password = "frank2752!";
 	$dbname = "kgzrwvux_user_responses";
 
+	$from = "kgzrwvux@sea-shared-21.hostwindsdns.com";
 	$emailname = wordwrap($_POST['name'],70);
 	$emailclimail = wordwrap($_POST['email'],70);
 	$emailmsg = wordwrap($_POST['message'],70);
-	mail('rockwood@rfrankweb.com', 'New Contact Form Submitted', 'Name: ' . $_POST['name'] . ' \r\n Email: ' . $_POST['email'] . '\r\n Message: ' . $_POST['comment']);
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	$headers .= 'From: '.$from."\r\n".
+		    'Reply-To: '.$from."\r\n"; 
+	$message = '<body>';
+	$message .= '<p>Name: ' . $emailname . '</p>';
+	$message .= '<p>Email: ' . $emailclimail . '</p>';
+	$message .= '<p>Message:</p>' . '<p>' . $emailmsg . '</p>';
+	mail('rockwood@rfrankweb.com', 'New Contact Form Submitted', $message, $headers);
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
