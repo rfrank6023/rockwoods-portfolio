@@ -331,7 +331,7 @@ if (!empty($_POST['comment'])) {
 	$emailname = wordwrap($_POST['name'],70);
 	$emailclimail = wordwrap($_POST['email'],70);
 	$emailmsg = wordwrap($_POST['message'],70);
-	mail('rockwood@rfrankweb.com', 'New Contact Form Submitted', 'Name: ' . $_POST['name'] . '\n Email: ' . $_POST['email'] . '\n Message: ' . $_POST['comment']);
+	mail('rockwood@rfrankweb.com', 'New Contact Form Submitted', 'Name: ' . $_POST['name'] . ' \r\n Email: ' . $_POST['email'] . '\r\n Message: ' . $_POST['comment']);
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
