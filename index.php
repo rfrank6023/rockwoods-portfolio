@@ -303,7 +303,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
 			if ( window.location.href == "https://www.blueocean-iptv.com/rfrankweb.com/" ) { document.body.innerText = "We're sorry, but a DNS error is causing this site to load improperly. We are working on the issue."}
 		</script>
 <?php
-mail('rockwoodfrank@gmail.com', 'Hello, World!', '! Does it send? And from whom?');
 $name = $email = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -328,6 +327,11 @@ if (!empty($_POST['comment'])) {
 	$username = "kgzrwvux_root";
 	$password = "frank2752!";
 	$dbname = "kgzrwvux_user_responses";
+
+	$emailname = wordwrap($_POST['name'],70);
+	$emailclimail = wordwrap($_POST['email'],70);
+	$emailmsg = wordwrap($_POST['message'],70);
+	mail('rockwood@rfrankweb.com', 'New Contact Form Submitted', 'Name: ' . $_POST['name'] . '\n Email: ' . $_POST['email'] . '\n Message: ' . $_POST['comment']);
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
