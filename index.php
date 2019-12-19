@@ -13,6 +13,7 @@
 		<link href="css/index.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<meta name = "description" content = "Rockwood Frank is a freelance web designer that makes amazing websites for businesses like yours." />
 		<title>
 			Rockwood Frank - Web Designer - Freelance Modern Web Designer for Small
 			Businesses
@@ -241,168 +242,26 @@
 						typically reply within 2 business days.
 					</p>
 				</div>
-				<form
-					class="form"
-					method="POST"
-					data-url="document.URL"
-					action="
-<?php
-$servername = "localhost";
-$username = "kgzrwvux_root";
-$password = "frank2752!";
-$dbname = "kgzrwvux_user_responses";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "INSERT INTO user_responses
-VALUES ('Rockywood!', 'Woo!', 'john@example.com')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-?>
-"
-				>
-					Name
-					<input
-						type="text"
-						name="name"
-						placeholder="John Doe"
-						data-aos="fade-left"
-						required
-					/>
-					Email
-					<input
-						data-aos="fade-left"
-						type="email"
-						name="email"
-						placeholder="johndoe@example.com"
-						required
-					/>
-					Message
-					<textarea
-						data-aos="fade-left"
-						rows="5"
-						cols="50"
-						name="message"
-						id="message"
-						placeholder="How can I help?"
-						required
-					></textarea>
-					<div
-						class="g-recaptcha"
-						data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb"
-						required
-					></div>
-					<br />
-					<input type="submit" id="submit-button" />
-					<div style="display:none" class="thankyou_message">
-						<p>
-							<em>Thanks</em> for contacting me! </p>
-					</div>
-				</form>
-			</section>
-<?php
-// define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed";
-    }
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
-    }
-  }
-    
-  if (empty($_POST["website"])) {
-    $website = "";
-  } else {
-    $website = test_input($_POST["website"]);
-    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL";
-    }
-  }
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
-
-<h2>PHP Form Validation Example</h2>
-<p><span class="error">* required field</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name" value="<?php echo $name;?>">
-  <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-  <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
-  Website: <input type="text" name="website" value="<?php echo $website;?>">
-  <span class="error"><?php echo $websiteErr;?></span>
-  <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-  <br><br>
-  Gender:
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
-  <span class="error">* <?php echo $genderErr;?></span>
-  <br><br>
+<form method="post" action="#contact">  
+  Name: <input type="text" name="name" value="<?php echo $name;?>" required>
+  <br>
+  E-mail: <input type="email" name="email" value="<?php echo $email;?>" required>
+  <br>
+  Message: <textarea name="comment" rows="5" cols="40" required><?php echo $comment;?></textarea>
+  <br>
+<div class="g-recaptcha" data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb"></div>
+	<br>
   <input type="submit" name="submit" value="Submit">  
-</form>
-
 <?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $website;
-echo "<br>";
-echo $comment;
-echo "<br>";
-echo $gender;
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
+	echo "<p>Please check the CAPTCHA box.</p>";
+} else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['g-recaptcha-response']) {
+	echo "<p>Thanks! I will get back to you soon!</p>";
+}
 ?>
+</form>
+			</section>
 		</main>
 		<footer>
 			<div id="footer-main">
@@ -442,6 +301,67 @@ echo $gender;
 		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 		<script>
 			AOS.init();
+			if ( window.location.href == "https://www.blueocean-iptv.com/rfrankweb.com/" ) { document.body.innerText = "We're sorry, but a DNS error is causing this site to load improperly. We are working on the issue."}
 		</script>
+<?php
+$name = $email = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = test_input($_POST["name"]);
+    $email = test_input($_POST["email"]);
+    $comment = test_input($_POST["comment"]);
+        $captcha = $_POST['g-recaptcha-response'];
+	if(!$captcha){
+	  exit;
+	}
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+if (!empty($_POST['comment'])) { 
+	$servername = "localhost";
+	$username = "kgzrwvux_root";
+	$password = "frank2752!";
+	$dbname = "kgzrwvux_user_responses";
+
+	$from = "kgzrwvux@sea-shared-21.hostwindsdns.com";
+	$emailname = wordwrap($_POST['name'],70);
+	$emailclimail = wordwrap($_POST['email'],70);
+	$emailmsg = wordwrap($_POST['comment'],70);
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	$headers .= 'From: '.$from."\r\n".
+		    'Reply-To: '.$from."\r\n"; 
+	$message = '<body>';
+	$message .= '<p>Name: ' . $emailname . '</p>';
+	$message .= '<p>Email: ' . $emailclimail . '</p>';
+	$message .= '<p>Message:</p>' . '<p>' . $emailmsg . '</p>';
+	mail('rockwood@rfrankweb.com', 'New Contact Form Submitted', $message, $headers);
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	$query = "INSERT INTO user_responses VALUES(?, ?, ?)";
+	$stmt = $conn->prepare($query);
+	$stmt->bind_param("sss", $_POST['name'], $_POST['email'], $_POST['comment']);
+	$stmt->execute();	
+
+	if ($conn->query($query) === TRUE) {
+	    $message = "I have recieved your request! Thank you! I will reply soon!";
+	} else {
+	    $message = "Error: " . $sql . "<br>" . $conn->error;
+	}
+	$conn->close();
+}
+?>
 	</body>
 </html>
