@@ -303,7 +303,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
 			if ( window.location.href == "https://www.blueocean-iptv.com/rfrankweb.com/" ) { document.body.innerText = "We're sorry, but a DNS error is causing this site to load improperly. We are working on the issue."}
 		</script>
 <?php
-mail('rockwoodfrank@gmail.com', 'Hello, World!', 'This is a test email! Does it send? And from whom?');
+mail('rockwoodfrank@gmail.com', 'Hello, World!', '! Does it send? And from whom?');
 $name = $email = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
