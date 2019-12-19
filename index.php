@@ -13,6 +13,7 @@
 		<link href="css/index.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<meta name = "description" content = "Rockwood Frank is a freelance web designer that makes amazing websites for businesses like yours." />
 		<title>
 			Rockwood Frank - Web Designer - Freelance Modern Web Designer for Small
 			Businesses
