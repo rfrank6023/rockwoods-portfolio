@@ -79,11 +79,11 @@
 					</p>
 				</div>
 				<nav data-aos="fade-in" data-aos-delay="50">
-					<a href="./index.html">Home</a>
+					<a href="">Home</a>
 					<a href="#contact">Contact</a>
 					<a href="./portfolio.html">Portfolio</a>
 					<a href="./about.html">About Me</a>
-					<a href="./services.html">Services</a>
+					<a href="/#services-home">Services</a>
 				</nav>
 			</header>
 			<section id="intro">
@@ -181,15 +181,13 @@
 							with the basics, and then meticulously refining until I get every
 							detail perfect.
 						</p>
-						<a class="tiles-button" href="services#design-tile">Learn More</a>
 					</div>
 					<div id="dev-tile" data-aos="fade-up" data-aos-delay="150">
 						<h2>I create the code that makes up the site.</h2>
 						<p>
 							I work with HTML, CSS, and Javascript(the languages of the web) to
-							make the site look great on every device, everyewhere.
+							make the site look great on every device, everyewhere. For more specific development, my tools are Vue.js, Node.js, PHP, and Sass.
 						</p>
-						<a class="tiles-button" href="services#dev-tile">Learn More</a>
 					</div>
 					<div id="seo-tile" data-aos="fade-up" data-aos-delay="300">
 						<h2>I work with SEO so your business is found online.</h2>
@@ -198,7 +196,6 @@
 							search results, I work through an intricate process to optimize
 							your site.
 						</p>
-						<a class="tiles-button" href="services#biz-tile">Learn More</a>
 					</div>
 					<div id="dev-ops" data-aos="fade-up">
 						<h2>I manage Development Operations for the site.</h2>
@@ -207,7 +204,6 @@
 							the server, and making sure it is running properly, as well as
 							connecting it to a domain name.
 						</p>
-						<a class="tiles-button" href="services#biz-tile">Learn More</a>
 					</div>
 					<div id="online-tile" data-aos="fade-up" data-aos-delay="150">
 						<h2>I make sure your business has a strong online presence.</h2>
@@ -215,7 +211,6 @@
 							I guide you through the work of Google My Business and more, to
 							help potential cusomters find you even more.
 						</p>
-						<a class="tiles-button" href="services#biz-tile">Learn More</a>
 					</div>
 					<div id="pricing-tile" data-aos="fade-up" data-aos-delay="300">
 						<h2>How do I charge for my work?"</h2>
@@ -223,7 +218,6 @@
 							I use a fixed rate pricing startegy that is fair to you, and
 							values my work.
 						</p>
-						<a class="tiles-button" href="services#pricing-tile">Learn More</a>
 					</div>
 				</div>
 			</section>
