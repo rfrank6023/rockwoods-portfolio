@@ -80,7 +80,7 @@
 				</div>
 				<nav data-aos="fade-in" data-aos-delay="50">
 					<a href="./index.html">Home</a>
-					<a href="./contact.html">Contact</a>
+					<a href="#contact">Contact</a>
 					<a href="./portfolio.html">Portfolio</a>
 					<a href="./about.html">About Me</a>
 					<a href="./services.html">Services</a>
