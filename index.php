@@ -13,7 +13,7 @@
 					E-mail:
 					<input type="email" name="email" value="<?php echo $email;?>" required="required"><br>
 					Message:
-					<textarea name="comment" rows="5" cols="40" required="required">&lt;?php echo $comment;?&gt;</textarea><br><div data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb" class="g-recaptcha"></div><br><input type="submit" name="submit" value="Submit" id="submit"><?php
+  <textarea name="comment" rows="5" cols="40" required="required"><?php echo $comment;?></textarea><br><div data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb" class="g-recaptcha"></div><br><input type="submit" name="submit" value="Submit" id="submit"><?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
 	echo "<p>Please check the CAPTCHA box.</p>";
 } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['g-recaptcha-response']) {
