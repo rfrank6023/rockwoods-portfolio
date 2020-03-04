@@ -22,13 +22,83 @@
 			Fast and Healthy Nutrition
 		</p><p class="portfolio-tile__year">
 			2019
-		</p></div></div></div><section id="contact"><h1 id="contact__header" data-aos="fade">Let's Talk.</h1><div id="contact__container"><div id="contact__info" data-aos="fade-right"><a href="mailto:rockwood@rfrankweb.com" class="contact-method">rockwood@rfrankweb.com</a><br><a href="phone:4069051456" class="contact-method">(406) 905 1456</a></div><form method="post" action="#contact">
+		</p></div></div></div>
+		
+		<section id="contact"><h1 id="contact__header" data-aos="fade">Let's Talk.</h1><div id="contact__container"><div id="contact__info" data-aos="fade-right"><a href="mailto:rockwood@rfrankweb.com" class="contact-method">rockwood@rfrankweb.com</a><br><a href="phone:4069051456" class="contact-method">(406) 905 1456</a></div><form method="post" action="#contact">
 						Name:
 						<input type="text" name="name" value="<?php echo $name;?>" data-aos="fade-left" required="required"><br>
 						E-mail:
 						<input type="email" name="email" value="<?php echo $email;?>" data-aos="fade-left" required="required"><br>
 						Message:
-						<textarea name="comment" rows="5" cols="40" data-aos="fade-left" required="required">&lt;?php echo $comment;?&gt;</textarea><br><div data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb" class="g-recaptcha"></div><br><input type="submit" name="submit" value="Submit" id="submit"></form></div></section></section></main>
-    <script>window.__INITIAL_STATE__={"data":null,"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/assets/js/app.52f68dac.js" defer></script><script src="/assets/js/page--src--pages--index-vue.c74b33b4.js" defer></script>
+						<textarea name="comment" rows="5" cols="40" data-aos="fade-left" required="required"><?php echo $comment;?></textarea><br>
+						<?php
+							if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
+								echo "<p>Please check the CAPTCHA box.</p>";
+							} else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['g-recaptcha-response']) {
+								echo "<p>Thanks! I will get back to you soon!</p>";
+							}
+						?>
+						<div data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb" class="g-recaptcha"></div><br><input type="submit" name="submit" value="Submit" id="submit"></form></div></section></section></main>
+	<script>window.__INITIAL_STATE__={"data":null,"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/assets/js/app.52f68dac.js" defer></script><script src="/assets/js/page--src--pages--index-vue.c74b33b4.js" defer></script>
+	<?php
+		$name = $email = $comment = $website = "";
+
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			$name = test_input($_POST["name"]);
+			$email = test_input($_POST["email"]);
+			$comment = test_input($_POST["comment"]);
+				$captcha = $_POST['g-recaptcha-response'];
+			if(!$captcha){
+			exit;
+			}
+		}
+
+		function test_input($data) {
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+		}
+
+		if (!empty($_POST['comment'])) { 
+			$servername = "localhost";
+			$username = "kgzrwvux_root";
+			$password = "frank2752!";
+			$dbname = "kgzrwvux_user_responses";
+
+			$from = "kgzrwvux@sea-shared-21.hostwindsdns.com";
+			$emailname = wordwrap($_POST['name'],70);
+			$emailclimail = wordwrap($_POST['email'],70);
+			$emailmsg = wordwrap($_POST['comment'],70);
+			$headers  = 'MIME-Version: 1.0' . "\r\n";
+			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+			$headers .= 'From: '.$from."\r\n".
+					'Reply-To: '.$from."\r\n"; 
+			$message = '<body>';
+			$message .= '<p>Name: ' . $emailname . '</p>';
+			$message .= '<p>Email: ' . $emailclimail . '</p>';
+			$message .= '<p>Message:</p>' . '<p>' . $emailmsg . '</p>';
+			mail('rockwood@rfrankweb.com', 'New Contact Form Submitted', $message, $headers);
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			// Check connection
+			if ($conn->connect_error) {
+				die("Connection failed: " . $conn->connect_error);
+			}
+
+			$query = "INSERT INTO user_responses VALUES(?, ?, ?)";
+			$stmt = $conn->prepare($query);
+			$stmt->bind_param("sss", $_POST['name'], $_POST['email'], $_POST['comment']);
+			$stmt->execute();	
+
+			if ($conn->query($query) === TRUE) {
+				$message = "I have recieved your request! Thank you! I will reply soon!";
+			} else {
+				$message = "Error: " . $sql . "<br>" . $conn->error;
+			}
+			$conn->close();
+		}
+	?>
   </body>
 </html>
