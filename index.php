@@ -22,25 +22,21 @@
 			Fast and Healthy Nutrition
 		</p><p class="portfolio-tile__year">
 			2019
-		</p></div></div></div>
-		
-		<section id="contact"><h1 id="contact__header" data-aos="fade">Let's Talk.</h1><div id="contact__container"><div id="contact__info" data-aos="fade-right"><a href="mailto:rockwood@rfrankweb.com" class="contact-method">rockwood@rfrankweb.com</a><br><a href="phone:4069051456" class="contact-method">(406) 905 1456</a></div><form method="post" action="#contact">
+		</p></div></div></div><section id="contact"><h1 id="contact__header" data-aos="fade">Let's Talk.</h1><div id="contact__container"><div id="contact__info" data-aos="fade-right"><a href="mailto:rockwood@rfrankweb.com" class="contact-method">rockwood@rfrankweb.com</a><br><a href="phone:4069051456" class="contact-method">(406) 905 1456</a></div><form method="post" action="#contact">
 						Name:
 						<input type="text" name="name" value="<?php echo $name;?>" data-aos="fade-left" required="required"><br>
 						E-mail:
 						<input type="email" name="email" value="<?php echo $email;?>" data-aos="fade-left" required="required"><br>
 						Message:
-						<textarea name="comment" rows="5" cols="40" data-aos="fade-left" required="required"><?php echo $comment;?></textarea><br>
+						<textarea name="comment" rows="5" cols="40" data-aos="fade-left" required="required">&lt;?php echo $comment;?&gt;</textarea><br><div data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb" class="g-recaptcha"></div><br><input type="submit" name="submit" value="Submit" id="submit"></form>
 						<?php
-							if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
-								echo "<p>Please check the CAPTCHA box.</p>";
-							} else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['g-recaptcha-response']) {
-								echo "<p>Thanks! I will get back to you soon!</p>";
-							}
-						?>
-						<div data-sitekey="6Lfw_scUAAAAAG0qJ4I_M981SNyu-K-BBshk4jSb" class="g-recaptcha"></div><br><input type="submit" name="submit" value="Submit" id="submit"></form></div></section></section></main>
-	<script>window.__INITIAL_STATE__={"data":null,"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/assets/js/app.52f68dac.js" defer></script><script src="/assets/js/page--src--pages--index-vue.c74b33b4.js" defer></script>
-	<?php
+						if ($_SERVER["REQUEST_METHOD"] == "POST" && !$_POST['g-recaptcha-response']) {
+							echo "<p>Please check the CAPTCHA box.</p>";
+						} else if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['g-recaptcha-response']) {
+							echo "<p>Thanks! I will get back to you soon!</p>";
+						}
+						?></div></section></section></main>
+						<?php
 		$name = $email = $comment = $website = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -100,5 +96,6 @@
 			$conn->close();
 		}
 	?>
+    <script>window.__INITIAL_STATE__={"data":null,"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/assets/js/app.52f68dac.js" defer></script><script src="/assets/js/page--src--pages--index-vue.c74b33b4.js" defer></script>
   </body>
 </html>
